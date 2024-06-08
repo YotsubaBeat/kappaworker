@@ -10,7 +10,7 @@ wsServer.on('connection', function(socket){
     // Attach some behavior to the incoming socket
 
     socket.on('message', function(msg){
-        console.log((new Date()) + "| Received data from client | " + msg);
+        console.log((new Date()) + " | Received data from client: " + "[" + msg + "]");
         // socket.send("Take this back: " + msg);
 
         // Brodcast that message to all connected clients
@@ -24,4 +24,4 @@ wsServer.on('connection', function(socket){
 
 });
 
-console.log("URL: " + "https://" + process.env.PROJECT_DOMAIN + ".glitch.me" + " | " + "Port:  " + process.env.PORT)
+console.log((new Date()) + " | Websocket Server opened on port: " + process.env.PORT)
