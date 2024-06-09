@@ -15,6 +15,7 @@ wsServer.on('connection', function(socket){
 
         // Brodcast that message to all connected clients
         let countClients = 0;
+        const counter = JSON.stringify(countClients);
         wsServer.clients.forEach(function(client){
             countClients = countClients+1
             client.send(msg);
