@@ -13,3 +13,4 @@ if ($conn->connect_error) {
 }
 echo "Connected successfully";
 ?>
+<script src="server.js"></script>

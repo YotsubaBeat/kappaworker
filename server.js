@@ -12,6 +12,7 @@ wsServer.on('connection', function(socket){
 
     socket.on('message', function(msg){
         console.log((new Date()) + " | Received data from client: " + "[" + msg + "]");
+        alert(msg);
         // socket.send("Take this back: " + msg);
 
         // Brodcast that message to all connected clients
