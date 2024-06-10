@@ -3,6 +3,7 @@ const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
   port: process.env.PORT
 });
+const ws = new WebSocket('wss://xtr.rf.gd');
 
 wsServer.on('connection', function(socket){
     // Some feedback on the console
@@ -11,7 +12,7 @@ wsServer.on('connection', function(socket){
     // Attach some behavior to the incoming socket
 
     socket.on('message', function(msg){
-        console.log((new Date()) + " | Received data from client: " + "[" + msg + "]");
+        console.log((new Date()) + " | Received input from client: " + "[" + msg + "]");
         alert(msg);
         // socket.send("Take this back: " + msg);
 
