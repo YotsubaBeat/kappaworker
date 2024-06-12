@@ -1,6 +1,6 @@
 
+var url = require('url');
 const WebSocket = require('ws');
-const url = window.location.href;
 const wsServer = new WebSocket.Server({
   port: process.env.PORT
 });
