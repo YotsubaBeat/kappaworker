@@ -3,7 +3,6 @@ const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
   port: process.env.PORT
 });
-const ws = new WebSocket('wss://xtr.rf.gd');
 
 wsServer.on('connection', function(socket){
     // Some feedback on the console
