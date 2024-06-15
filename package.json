@@ -1,9 +1,9 @@
 {
   "name" : "test-server",
   "version" : "0.1.0",
-  "main" : "myapp.js",
+  "main" : "server.js",
   "scripts" : {
-    "start" : "node myapp.js"
+    "start" : "node server.js"
   },
   "engines" : {
     "node" : "^20"
