@@ -13,16 +13,7 @@ wsServer.on('connection', function(socket){
 
     socket.on('message', function(msg){
         console.log((new Date()) + " | Received input from client: " + "[" + msg + "]");
-        alert(msg);
         // socket.send("Take this back: " + msg);
-
-        // Brodcast that message to all connected clients
-        let countClients = 0;
-        const counter = JSON.stringify(countClients);
-        wsServer.clients.forEach(function(client){
-            countClients = countClients+1
-            client.send(msg);
-        });
 
     })
 
