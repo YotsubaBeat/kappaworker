@@ -13,8 +13,7 @@ wsServer.on('connection', function(socket){
 
     socket.on('message', function(msg){
         console.log((new Date()) + " | Received input from client: " + "[" + msg + "]");
-        // socket.send("Take this back: " + msg);
-
+        socket.send("Got it!");
     })
 
 });
