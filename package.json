@@ -1,25 +1,11 @@
 {
-  "name": "kappa-worker",
-  "version": "0.1.0",
-  "description": "A websocket server.",
-  "main": "server.js",
-  "scripts": {
-    "start": "node server.js"
+  "name" : "test-server",
+  "version" : "0.1.0",
+  "main" : "myapp.js",
+  "scripts" : {
+    "start" : "node myapp.js"
   },
-  "dependencies": {
-    "php": "^1.0.2",
-    "socket.io": "^4.7.5",
-    "ws": "^8.17.0"
-  },
-  "engines": {
-    "node": "14.x"
-  },
-  "repository": {
-    "url": "https://xtr.rf.gd"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "kappa"
-  ]
+  "engines" : {
+    "node" : "^20"
+  }
 }
