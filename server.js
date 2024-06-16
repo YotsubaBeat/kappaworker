@@ -13,7 +13,13 @@ wsServer.on('connection', function(socket){
 
     socket.on('message', function(msg){
         console.log((new Date()) + " | Received input from client: " + "[" + msg + "]");
-        socket.send("Got it!");
+        if (!isUrl(msg)) msg = 'https://www.google.com/search?q=' + msg;
+        else if (!(msg.startsWith('https://') || msg.startsWith('http://'))) msg = 'http://' + msg;
+        function isUrl(val = ''){
+          if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
+          return false;
+        };
+        socket.send(msg);
     })
 
 });
