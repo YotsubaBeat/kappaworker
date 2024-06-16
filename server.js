@@ -11,12 +11,12 @@ wsServer.on('connection', function(socket){
         console.log((new Date()) + " | Received input from client: " + "[" + msg + "]");
         if (!isUrl(msg)) {
           msg = 'https://www.google.com/search?q=' + msg;
-        } else if (!(msg.startsWith('https://') || msg.startsWith('http://'))) { 
-          msg = 'http://' + msg;
+        } else if (isUrl(msg)) { 
+          msg = 'https://' + msg;
         }
-        function isUrl(val = ''){
-          if (/^http(s?):\/\//.test(val) || val.includes('.') && val.substr(0, 1) !== ' ') return true;
-          return false;
+        function isUrl(val = val.trim()) {
+          if (/^http(s?):\/\//.test(val) || val.includes('.')) 
+            return true || false;
         };
         // Responds to websocket
         socket.send(msg);
