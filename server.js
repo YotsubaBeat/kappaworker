@@ -19,7 +19,11 @@ wsServer.on('connection', function(socket){
             return true || false;
         };
         // Responds to websocket
-        socket.send(__uv$config.prefix + __uv$config.encodeUrl(msg));
+        window.navigator.serviceWorker.register('sw.js', {
+          scope: __uv$config.prefix
+        }).then(() => {
+          socket.send(__uv$config.prefix + __uv$config.encodeUrl(msg));
+        });
     })
 });
 // Logs websocket status
