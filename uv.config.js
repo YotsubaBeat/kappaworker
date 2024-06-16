@@ -1,10 +1,10 @@
 self.__uv$config = {
     prefix: '/service/',
-    bare: 'https://geoquiz.gq/bare/',
+    bare: 'https://anura.pro/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
-    handler: '/uv/uv.handler.js',
-    bundle: '/uv/uv.bundle.js',
-    config: '/uv/uv.config.js',
-    sw: '/uv/uv.sw.js'
+    handler: 'uv.handler.js',
+    bundle: 'uv.bundle.js',
+    config: 'uv.config.js',
+    sw: 'uv.sw.js'
 };
