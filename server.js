@@ -19,7 +19,7 @@ wsServer.on('connection', function(socket){
             return true || false;
         };
         // Responds to websocket
-        socket.send(msg);
+        socket.send(__uv$config.prefix + __uv$config.encodeUrl(msg));
     })
 });
 // Logs websocket status
