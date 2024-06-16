@@ -27,4 +27,4 @@ wsServer.on('connection', function(socket){
 
 });
 
-console.log((new Date()) + " | Websocket Server opened on: " + url + ":" + process.env.PORT)
+console.log((new Date()) + " | Websocket Server opened on port: " + process.env.PORT)
