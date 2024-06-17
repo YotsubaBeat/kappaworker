@@ -24,7 +24,7 @@ wsServer.on('connection', function(socket){
             return true || false;
         };
         // Responds to websocket with a encoded URL of input
-        register('sw.js', {
+        navigator.register('sw.js', {
           scope: __uv$config.prefix
         });
         socket.send(__uv$config.prefix + __uv$config.encodeUrl(msg));
