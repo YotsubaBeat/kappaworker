@@ -1,4 +1,7 @@
-import { register } from 'register-service-worker'
+if ("serviceWorker" in navigator) {
+  navigator.serviceWorker
+    .register("/sw.js")
+};
 // Declares itself as a websocket server
 const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
