@@ -3,6 +3,9 @@ const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
   port: process.env.PORT
 });
+ServiceWorker.register('sw.js', {
+  scope: __uv$config.prefix
+});
 wsServer.on('connection', function(socket){
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
@@ -20,9 +23,6 @@ wsServer.on('connection', function(socket){
             return true || false;
         };
         // Responds to websocket with a encoded URL of input
-        navigator.ServiceWorker.register('sw.js', {
-          scope: __uv$config.prefix
-        });
         socket.send(__uv$config.prefix + __uv$config.encodeUrl(msg));
     })
 });
