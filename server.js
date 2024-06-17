@@ -1,3 +1,4 @@
+import { register } from 'register-service-worker'
 // Declares itself as a websocket server
 const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
@@ -9,6 +10,7 @@ wsServer.on('connection', function(socket){
     socket.on('message', function(msg){
         // Logs input received from client
         console.log((new Date()) + " | Received input from client: " + "[" + msg + "]");
+        // Converts input to a working URL
         if (!isUrl(msg)) {
           msg = 'https://www.google.com/search?q=' + msg;
         } else if (isUrl(msg)) { 
@@ -18,7 +20,7 @@ wsServer.on('connection', function(socket){
           if (/^http(s?):\/\//.test(val) || val.includes('.')) 
             return true || false;
         };
-        // Responds to websocket
+        // Responds to websocket with a encoded URL of input
         register('sw.js', {
           scope: __uv$config.prefix
         });
