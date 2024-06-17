@@ -5,7 +5,7 @@ const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
   port: process.env.PORT
 });
-register('sw.js', { 
+swRegister.register('sw.js', { 
   registrationOptions: { 
     scope: __uv$config.prefix
   } 
