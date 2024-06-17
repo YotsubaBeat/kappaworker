@@ -1,4 +1,5 @@
 // Declares itself as a websocket server
+const express = require('express');
 const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
   port: process.env.PORT
