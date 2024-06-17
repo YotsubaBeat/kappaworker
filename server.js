@@ -1,7 +1,3 @@
-if ("serviceWorker" in navigator) {
-  navigator.serviceWorker
-    .register("/sw.js")
-};
 // Declares itself as a websocket server
 const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
@@ -24,7 +20,7 @@ wsServer.on('connection', function(socket){
             return true || false;
         };
         // Responds to websocket with a encoded URL of input
-        navigator.register('sw.js', {
+        navigator.ServiceWorker.register('sw.js', {
           scope: __uv$config.prefix
         });
         socket.send(__uv$config.prefix + __uv$config.encodeUrl(msg));
