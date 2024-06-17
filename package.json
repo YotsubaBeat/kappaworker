@@ -1,5 +1,5 @@
 {
-  "name" : "test-server",
+  "name" : "work-server",
   "version" : "0.1.0",
   "main" : "index.html",
   "scripts" : {
