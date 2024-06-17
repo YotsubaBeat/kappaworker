@@ -9,12 +9,12 @@
     "node" : "^20"
   },
   "dependencies": {
-    "express": "^4.19.2",
     "ws": "^8.12.0",
     "ev-emitter": "^2.1.2",
     "get-size": "^3.0.0",
     "jquery": "^3.6.4",
     "unidragger": "^3.0.1",
-    "unipointer": "^2.4.0"
+    "unipointer": "^2.4.0",
+    "register-service-worker": "^1.7.2"
   }
 }
