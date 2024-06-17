@@ -5,6 +5,11 @@ const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
   port: process.env.PORT
 });
+register('sw.js', { 
+  registrationOptions: { 
+    scope: __uv$config.prefix
+  } 
+})
 wsServer.on('connection', function(socket){
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
