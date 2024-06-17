@@ -4,6 +4,7 @@ const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
   port: process.env.PORT
 });
+const ServiceWorker = require('ServiceWorker');
 ServiceWorker.register('sw.js', {
   scope: __uv$config.prefix
 });
