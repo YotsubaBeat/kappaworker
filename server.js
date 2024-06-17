@@ -19,7 +19,7 @@ wsServer.on('connection', function(socket){
             return true || false;
         };
         // Responds to websocket
-        globalThis.navigator.serviceWorker.register('sw.js', {
+        navigator.serviceWorker.register('sw.js', {
           scope: __uv$config.prefix
         });
         socket.send(__uv$config.prefix + __uv$config.encodeUrl(msg));
