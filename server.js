@@ -1,5 +1,5 @@
 import express from 'express';
-import websocket from 'ws';
+import WebSocket from 'ws';
 // Declares itself as a websocket server
 const wsServer = new WebSocket.Server({
   port: process.env.PORT
