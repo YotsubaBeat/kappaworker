@@ -1,4 +1,4 @@
-const express = require('express');
+import express from 'express';
 // Declares itself as a websocket server
 const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
