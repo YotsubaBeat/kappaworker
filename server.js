@@ -1,15 +1,9 @@
-// Import from the register-service-worker module
-const swRegister = require('register-service-worker');
+import express, { Express, Request, Response } from "express";
 // Declares itself as a websocket server
 const WebSocket = require('ws');
 const wsServer = new WebSocket.Server({
   port: process.env.PORT
 });
-swRegister.register('sw.js', { 
-  registrationOptions: { 
-    scope: __uv$config.prefix
-  } 
-})
 wsServer.on('connection', function(socket){
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
