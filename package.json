@@ -5,7 +5,7 @@
   "scripts" : {
     "build": "npx tsc",
     "start": "node index.js",
-    "dev": "nodemon sw.register.ts"
+    "dev": "node sw.register.ts"
   },
   "engines" : {
     "node" : "^20"
