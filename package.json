@@ -2,6 +2,7 @@
   "name" : "work-server",
   "version" : "0.1.0",
   "main" : "server.js",
+  "type" : "module",
   "scripts" : {
     "build": "npx tsc",
     "start": "node server.js",
