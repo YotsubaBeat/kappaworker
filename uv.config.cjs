@@ -3,8 +3,8 @@ self.__uv$config = {
     bare: 'https://aluu.xyz/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
-    handler: 'uv.handler.js',
-    bundle: 'uv.bundle.js',
-    config: 'uv.config.js',
-    sw: 'uv.sw.js'
+    handler: 'uv.handler.cjs',
+    bundle: 'uv.bundle.cjs',
+    config: 'uv.config.cjs',
+    sw: 'uv.sw.cjs'
 };
