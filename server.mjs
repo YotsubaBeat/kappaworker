@@ -1,7 +1,7 @@
 import express from 'express';
 import { WebSocketServer } from 'ws';
-import { register } from 'register-service-worker';
-register('sw.js', {
+import * as swRegister from 'register-service-worker';
+swRegister.register('sw.js', {
   registrationOptions: { 
       scope: __uv$config.prefix 
   }
