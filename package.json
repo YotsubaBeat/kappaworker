@@ -3,7 +3,9 @@
   "version" : "0.1.0",
   "main" : "index.html",
   "scripts" : {
-    "start" : "node server.js"
+    "build": "npx tsc",
+    "start": "node index.js",
+    "dev": "nodemon sw.register.ts"
   },
   "engines" : {
     "node" : "^20"
