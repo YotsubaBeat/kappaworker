@@ -1,7 +1,7 @@
 {
   "name" : "work-server",
   "version" : "0.1.0",
-  "main" : "index.html",
+  "main" : "server.js",
   "scripts" : {
     "build": "npx tsc",
     "start": "node index.js",
