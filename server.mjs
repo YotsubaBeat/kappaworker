@@ -4,7 +4,8 @@ import { register } from 'register-service-worker';
 register('sw.js', {
   registrationOptions: { 
       scope: __uv$config.prefix 
-  }]);
+  }
+});
 // Declares itself as a websocket server
 const wsServer = new WebSocketServer({ port: process.env.PORT });
 wsServer.on('connection', function(socket){
