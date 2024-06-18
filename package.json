@@ -3,9 +3,7 @@
   "version" : "0.1.0",
   "main" : "server.js",
   "scripts" : {
-    "build": "npx tsc",
     "start": "node server.mjs",
-    "dev": "node sw.register.ts"
   },
   "engines" : {
     "node" : "^20"
@@ -18,7 +16,6 @@
     "jquery": "^3.6.4",
     "unidragger": "^3.0.1",
     "unipointer": "^2.4.0",
-    "register-service-worker": "^1.7.2",
-    "ts-node": "^10.9.2"
+    "register-service-worker": "^1.7.2"
   }
 }
