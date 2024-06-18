@@ -1,7 +1,7 @@
 import express from 'express';
-import WebSocket from 'ws';
+import { WebSocketServer } from 'ws';
 // Declares itself as a websocket server
-const wsServer = new WebSocket.Server({ port: process.env.PORT });
+const wsServer = new WebSocketServer({ port: process.env.PORT });
 wsServer.on('connection', function(socket){
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
