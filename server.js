@@ -1,13 +1,12 @@
 const http = require('http');
  const fs = require('fs');
 
- const host = 'https://serviceworker.cleverapps.io';
  const port = process.env.PORT;
 
  const httpServer = http.createServer(httpHandler);
 
  httpServer.listen(port, host, () => {
-     console.log(`HTTP server running at http://${host}:${port}/`);
+     console.log((new Date()) + ' | HTTP Server running on port: ' + port);
  });
 
  function httpHandler(req, res) {
