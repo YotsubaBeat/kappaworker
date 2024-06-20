@@ -2,7 +2,7 @@ const http = require('http');
  const fs = require('fs');
 
  const port = process.env.PORT;
- const host = process.env.APP_ID + ".cleverapp.io";
+ const host = localhost;
 
  const httpServer = http.createServer(httpHandler);
 
