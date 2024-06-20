@@ -1,6 +1,12 @@
 <p>Welcome</p>
-<script>
-const ws = require('ws');
+<script type="module">
+import * as swRegister from 'register-service-worker';
+import { WebSocketServer } from 'ws';
+swRegister.register('sw.cjs', {
+    registrationOptions: {
+        scope: __uv$config.prefix
+    }
+});
 // Declares itself as a websocket server
 const wsServer = new WebSocketServer({ port: process.env.PORT });
 wsServer.on('connection', function(socket){
