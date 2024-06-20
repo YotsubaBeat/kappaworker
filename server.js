@@ -2,11 +2,10 @@ const http = require('http');
  const fs = require('fs');
 
  const port = process.env.PORT;
- const host = url();
 
  const httpServer = http.createServer(httpHandler);
 
- httpServer.listen(port, host, () => {
+ httpServer.listen(port, () => {
      console.log((new Date()) + ' | HTTP Server running on port: ' + port);
  });
 
