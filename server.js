@@ -2,7 +2,7 @@ const http = require('http');
  const fs = require('fs');
 
  const port = process.env.PORT;
- const host = server.address();
+ const host = url();
 
  const httpServer = http.createServer(httpHandler);
 
