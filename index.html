@@ -1,6 +1,6 @@
 <p>Welcome</p>
 <script type="module">
-import * as swRegister from 'register-service-worker';
+import { register } from 'register-service-worker';
 import { WebSocketServer } from 'ws';
 swRegister.register('sw.cjs', {
     registrationOptions: {
