@@ -1,23 +1,15 @@
 const http = require('http');
- const fs = require('fs');
-
- const port = process.env.PORT;
- const host = '0.0.0.0';
-
- const httpServer = http.createServer(httpHandler);
-
- httpServer.listen(port, host, () => {
-     console.log((new Date()) + ' | HTTP Server running on port: ' + port);
- });
-
- function httpHandler(req, res) {
-     fs.readFile(req.url, function (err, data) {
-
-         if (err == null ) {
-
-             res.writeHead(200, {'Content-Type': 'text/html'});
-             res.write(data);
-             res.end();
-         }
-     });
- }
+const express = require('express');
+const path = require('path');
+const app = express();
+app.use(express.json());
+app.use(express.static("express"));
+// default URL for website
+app.use('/', function(req,res){
+    res.sendFile(path.join(__dirname+'index.html'));
+    //__dirname : It will resolve to your project folder.
+  });
+const server = http.createServer(app);
+const port = process.env.PORT;
+server.listen(port);
+console.debug('Server listening on port ' + port);
