@@ -1,5 +1,8 @@
 ## wsProxy - A proxy app which works with websockets
 Responds to websocket requests and sends back its work.
+
+## Dependencies
+Requires the NodeJS javascript framework to run.
 > [!IMPORTANT]
 >   ## Needs any client to process the webpage for the encoding process to properly work
 
