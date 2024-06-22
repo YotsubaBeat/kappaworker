@@ -11,5 +11,5 @@ app.use('/', function(req,res){
 const httpserver = http.createServer(app);
 const port = process.env.PORT;
 const wsServer = new WebSocket.Server({ server: httpserver });
-server.listen(port);
+httpserver.listen(port);
 console.debug('Server listening on port ' + port);
