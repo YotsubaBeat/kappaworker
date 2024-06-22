@@ -11,17 +11,18 @@ wsServer.on('connection', function(socket){
         // Logs input received from client
         console.log((new Date()) + " | Received input from client: " + "[" + msg + "]");
         // Converts input to a working URL
+        const encodedWebSocket = 0;
         if (!isUrl(msg)) {
-          msg = 'https://www.google.com/search?q=' + msg;
+          encodedWebSocket = 'https://www.google.com/search?q=' + msg;
         } else if (isUrl(msg)) { 
-          msg = 'https://' + msg;
+          encodedWebSocket = 'https://' + msg;
         }
         function isUrl(val = val.trim()) {
           if (/^http(s?):\/\//.test(val) || val.includes('.')) 
             return true || false;
         };
         // Responds to websocket with a encoded URL of input
-        socket.send(__uv$config.prefix + __uv$config.encodeUrl(msg));
+        socket.send(__uv$config.prefix + __uv$config.encodeUrl(encodedWebSocket));
     })
 });
 // Logs websocket status
