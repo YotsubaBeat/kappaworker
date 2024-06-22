@@ -1,10 +1,4 @@
-import { register } from 'register-service-worker';
-import { WebSocketServer } from 'ws';
-swRegister.register('sw.cjs', {
-    registrationOptions: {
-        scope: __uv$config.prefix
-    }
-});
+const ws = require('ws');
 // Declares itself as a websocket server
 const wsServer = new WebSocketServer({ port: process.env.PORT });
 wsServer.on('connection', function(socket){
