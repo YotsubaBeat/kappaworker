@@ -6,3 +6,8 @@ Responds to websocket requests and sends back its work.
 ## Benefits
 With the use of [wsProxy client](https://github.com/yotsubabeat), wsProxy can be runned with the use of a plain HTML document runned on any browser,
 You will not need to install/download anything else but the [wsProxy client](https://github.com/yotsubabeat), and a proper web browser.
+
+## Configuration
+Navigate to `uv.config.cjs` for assignment of the bare server of your choice and configuration of the service prefix.
+
+For assignment of the hostname and port of the webpage, please navigate to `index.mjs` and configure the port in `.env` to your liking.
