@@ -1,4 +1,4 @@
-const ws = require('ws');
+const WebSocket = require('ws');
 const http = require('http');
 const express = require('express');
 const path = require('path');
@@ -8,8 +8,8 @@ app.use(express.static("express"));
 app.use('/', function(req,res){
     res.sendFile(path.join(__dirname+'/index.html'));
   });
-const server = http.createServer(app);
+const httpserver = http.createServer(app);
 const port = process.env.PORT;
-const wsServer = new ws.WebSocketServer({ port: port });
+const wsServer = new WebSocket.Server({ server: httpserver });
 server.listen(port);
 console.debug('Server listening on port ' + port);
