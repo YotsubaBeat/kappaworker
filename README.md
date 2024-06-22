@@ -13,4 +13,4 @@ You will not need to install/download anything else but the [wsProxy client](htt
 ## Configuration
 Navigate to `uv.config.cjs` for configuration of the bare server and service prefix.
 
-For assignment of the hostname and port of the webpage, please navigate to `index.mjs` and configure the port in `.env` to your liking.
+For assignment of the hostname and port of the webpage, please navigate to `index.cjs` and configure the port in `.env` to your liking.
