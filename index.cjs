@@ -1,4 +1,7 @@
 const ws = require('ws');
+register('sw.cjs',{
+    scope: __uv$config.prefix
+    });
 // Declares itself as a websocket server
 const wsServer = new WebSocketServer({ port: process.env.PORT });
 wsServer.on('connection', function(socket){
