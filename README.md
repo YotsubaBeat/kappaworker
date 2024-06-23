@@ -3,7 +3,7 @@ Works similar to [the wisp protocol](https://wisp.mercurywork.shop), but made mo
 ## Dependencies
 Requires the NodeJS javascript framework to run.
 > [!IMPORTANT]
->   ## Needs any client to process the webpage for the encoding process to properly work
+> Needs any client to process the webpage for the protocol to properly work
 
 ## Benefits
 With the use of [wsProxy client](https://github.com/yotsubabeat), wsProxy can be runned with the use of a plain HTML document runned on any browser,
