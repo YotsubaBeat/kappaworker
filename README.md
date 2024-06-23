@@ -1,6 +1,5 @@
-## wsProxy - A proxy app which works with websockets
-Responds to websocket requests and sends back its work.
-
+## wsProxy
+Works similar to [the wisp protocol](https://wisp.mercurywork.shop), but made more to work as a active in use server for handling multiple websocket connection established by [the wsProxy client](https://github.com/yotsubabeat).
 ## Dependencies
 Requires the NodeJS javascript framework to run.
 > [!IMPORTANT]
@@ -13,4 +12,4 @@ You will not need to install/download anything else but the [wsProxy client](htt
 ## Configuration
 Navigate to `uv.config.cjs` for configuration of the bare server and service prefix.
 
-For assignment of the hostname and port of the webpage, please navigate to `index.cjs` and configure the port in `.env` to your liking.
+For configuration of the http server port, please navigate to `.env`.
