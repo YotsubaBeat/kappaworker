@@ -1,2 +1,20 @@
-<p>HTTP Server is running</p>
+<p>This webpage hosts a <span onclick="openRepo()">wsProxy server</span></p>
 <script src="index.cjs"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+  p {
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 400;
+    font-style: normal;
+  }
+  span {
+    font-family: "Ubuntu Mono", monospace;
+    font-weight: 700;
+    font-style: normal;
+  }
+</style>
+<script>
+  function openRepo() {
+    window.location.href = "https://github.com/YotsubaBeat/wsProxy";
+  }
+</script>
