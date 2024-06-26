@@ -34,6 +34,6 @@ wsServer.on('connection', function(socket){
         // Responds to websocket with a encoded URL of input
         data["request"] = encodedWebSocket;
         module.exports = data;
-        socket.send = encodeURL.response;
+        socket.send(encodeURL.response);
     })
 });
