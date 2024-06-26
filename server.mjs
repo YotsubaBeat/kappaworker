@@ -4,13 +4,13 @@ import * as http from 'http';
 import express from 'express';
 import * as path from 'path';
 const app = express();
-app.use(express.json());
-app.use(express.static("express"));
-app.use('/', function(req,res){
+const port = process.env.PORT;
+app.listen(port, () => {
+    console.log((new Date()) + " | HTTP server listening on port: " + process.env.PORT);
+});
+app.get('/', function(req,res){
     res.sendFile(path.join(__dirname+'/index.php'));
   });
-const httpserver = http.createServer(app);
-const port = process.env.PORT;
 const wsServer = new server({ server: httpserver });
 httpserver.listen(port);
 console.debug('Server listening on port ' + port);
