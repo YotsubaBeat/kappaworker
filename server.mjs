@@ -3,7 +3,7 @@ import * as WebSocket from 'ws';
 import * as http from 'http';
 import * as express from 'express';
 import * as path from 'path';
-const app = express();
+const app = express.express();
 app.use(express.json());
 app.use(express.static("express"));
 app.use('/', function(req,res){
