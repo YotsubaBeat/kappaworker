@@ -1,4 +1,4 @@
-import * as encodeURL from 'respond.mjs';
+import * as encodeURL from './respond.mjs';
 import * as WebSocket from 'ws';
 import * as http from 'http';
 import * as express from 'express';
