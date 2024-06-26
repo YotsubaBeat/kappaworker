@@ -3,13 +3,12 @@ import * as WebSocket from 'ws';
 import * as http from 'http';
 import * as express from 'express';
 import * as path from 'path';
-const app = express.express();
-app.use(express.json());
-app.use(express.static("express"));
-app.use('/', function(req,res){
+express.use(express.json());
+express.use(express.static("express"));
+express.use('/', function(req,res){
     res.sendFile(path.join(__dirname+'/index.php'));
   });
-const httpserver = http.createServer(app);
+const httpserver = http.createServer(express);
 const port = process.env.PORT;
 const wsServer = new WebSocket.Server({ server: httpserver });
 httpserver.listen(port);
