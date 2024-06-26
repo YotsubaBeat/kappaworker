@@ -1,5 +1,5 @@
 import * as encodeURL from './respond.mjs';
-import server from 'ws';
+import { WebSocketServer } from 'ws';
 import * as http from 'http';
 import express from 'express';
 import * as path from 'path';
@@ -11,7 +11,7 @@ app.listen(port, () => {
 app.get('/', function(req,res){
     res.sendFile(path.join(__dirname+'/index.php'));
   });
-const wsServer = new server({ port: process.env.PORT });
+const wsServer = new WebSocketServer({ port: process.env.PORT });
 wsServer.on('connection', function(socket){
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
