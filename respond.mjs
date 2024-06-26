@@ -1,4 +1,4 @@
-import * as input from './server.js';
+import * as input from './server.mjs';
 import * as swRegister from 'register-service-worker';
 swRegister.register('/sw.cjs',{
     registrationOptions: {
