@@ -1,8 +1,8 @@
-const encodedURL = require('./respond.mjs');
-const WebSocket = require('ws');
-const http = require('http');
-const express = require('express');
-const path = require('path');
+import * as encodeURL from 'respond.mjs';
+import * as WebSocket from 'ws';
+import * as http from 'http';
+import * as express from 'express';
+import * as path from 'path';
 const app = express();
 app.use(express.json());
 app.use(express.static("express"));
