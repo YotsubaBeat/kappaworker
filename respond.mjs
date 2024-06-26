@@ -5,6 +5,6 @@ swRegister.register('/sw.cjs',{
         scope: __uv$config.prefix
     }
 });
-encode = __uv$config.prefix + __uv$config.encodeUrl(input.respond)); 
+encode = __uv$config.prefix + __uv$config.encodeUrl(input.respond); 
 data["response"] = encode;
 module.exports = data;
