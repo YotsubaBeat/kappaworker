@@ -1,6 +1,11 @@
 <p>This webpage hosts a <span onclick="openRepo()">wsProxy server</span></p>
-<script type="module" src="respond.mjs">
+<script type="module">
   import * as swRegister from 'register-service-worker';
+  swRegister.register('/sw.cjs',{
+    registrationOptions: {
+        scope: __uv$config.prefix
+    }
+});
 </script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
