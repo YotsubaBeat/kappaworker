@@ -1,5 +1,5 @@
 import * as encodeURL from './respond.mjs';
-import * as WebSocket from 'ws';
+import server from 'ws';
 import * as http from 'http';
 import express from 'express';
 import * as path from 'path';
@@ -11,7 +11,7 @@ app.use('/', function(req,res){
   });
 const httpserver = http.createServer(app);
 const port = process.env.PORT;
-const wsServer = new WebSocket.Server({ server: httpserver });
+const wsServer = new server({ server: httpserver });
 httpserver.listen(port);
 console.debug('Server listening on port ' + port);
 wsServer.on('connection', function(socket){
