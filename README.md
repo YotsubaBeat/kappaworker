@@ -12,4 +12,4 @@ You will not need to install/download anything else but the [wsProxy client](htt
 ## Configuration
 Navigate to `uv.config.cjs` for configuration of the bare server and service prefix.
 
-For configuration of the http server port, please define `PORT=<YOUR_PREFERED_PORT>` in the `.env`.
+For configuration of the websocket and HTTP server port, please define `PORT=<YOUR_PREFERED_PORT>` in the `.env`.
