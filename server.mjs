@@ -11,8 +11,7 @@ app.listen(port, () => {
 app.get('/', function(req,res){
     res.sendFile(path.join(__dirname+'/index.php'));
   });
-const wsServer = new server({ server: httpserver });
-httpserver.listen(port);
+const wsServer = new server({ port: process.env.PORT });
 console.debug('Server listening on port ' + port);
 wsServer.on('connection', function(socket){
     // Logs client connection on connect
