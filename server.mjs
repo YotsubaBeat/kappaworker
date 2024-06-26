@@ -1,14 +1,15 @@
 import * as encodeURL from './respond.mjs';
 import * as WebSocket from 'ws';
 import * as http from 'http';
-import * as express from 'express';
+import express from 'express';
 import * as path from 'path';
-express.use(express.json());
-express.use(express.static("express"));
-express.use('/', function(req,res){
+const app = express();
+app.use(express.json());
+app.use(express.static("express"));
+app.use('/', function(req,res){
     res.sendFile(path.join(__dirname+'/index.php'));
   });
-const httpserver = http.createServer(express);
+const httpserver = http.createServer(app);
 const port = process.env.PORT;
 const wsServer = new WebSocket.Server({ server: httpserver });
 httpserver.listen(port);
