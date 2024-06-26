@@ -1,5 +1,5 @@
+import { swRegister } from './index.html';
 import * as input from './server.mjs';
-import * as swRegister from 'register-service-worker';
 swRegister.register('/sw.cjs',{
     registrationOptions: {
         scope: __uv$config.prefix
