@@ -1,4 +1,3 @@
-import { swRegister } from './index.html';
 import * as input from './server.mjs';
 swRegister.register('/sw.cjs',{
     registrationOptions: {
