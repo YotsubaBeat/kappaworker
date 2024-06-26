@@ -7,7 +7,7 @@ const app = express();
 app.use(express.json());
 app.use(express.static("express"));
 app.use('/', function(req,res){
-    res.sendFile(path.join(__dirname+'/index.html'));
+    res.sendFile(path.join(__dirname+'/index.php'));
   });
 const httpserver = http.createServer(app);
 const port = process.env.PORT;
