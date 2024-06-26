@@ -1,4 +1,4 @@
-const encodedURL = require('/respond.mjs');
+const encodedURL = require('./respond.mjs');
 const WebSocket = require('ws');
 const http = require('http');
 const express = require('express');
