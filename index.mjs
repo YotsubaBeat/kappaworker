@@ -4,7 +4,7 @@ swRegister.register('/sw.cjs',{
     registrationOptions: {
         scope: __uv$config.prefix
     }
-    });
+});
 // Declares itself as a websocket server
 const wsServer = new WebSocket.Server({ port: process.env.PORT });
 wsServer.on('connection', function(socket){
