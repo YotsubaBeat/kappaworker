@@ -1,3 +1,3 @@
 const url = "test"; 
-data["response"] = url;
-module.exports = data;
+const data["response"] = url;
+const module.exports = data;
