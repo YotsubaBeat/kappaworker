@@ -5,30 +5,14 @@ import express from 'express';
 import * as path from 'path';
 import * as url from 'url';
 import * as fs from 'fs';
-import * as phpnode from 'php-node';
-import * as php from 'php';
+import * as sphp from 'sphp';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-function onReadFile(err, data) { 
-  if (err) console.error(err); 
-  else console.log(data); 
-} 
-php.run(__dirname+'/index.php', {}, function(e, r) {
-    onReadFile(r, e);
-})
 const app = express();
 const port = process.env.PORT;
-app.listen(port, () => {
-    console.log((new Date()) + " | HTTP server listening on port: " + process.env.PORT);
-});
-app.set('views', __dirname);
-app.engine('php', phpnode);
-app.set('view engine', 'php');
- 
-app.all('/index.php', function(req, res) {
-   res.render('index');
-})
 const wsServer = new WebSocketServer({ server: app });
-wsServer.on('connection', function(socket){
+app.use(sphp.express(__dirname+'/index.php'));
+app.use(express.static(__dirname+'/index.php'));
+wsServer.on('connection', sphp.websocket(socket) {
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
     socket.on('message', function(msg){
