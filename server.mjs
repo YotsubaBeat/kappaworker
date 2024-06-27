@@ -6,13 +6,13 @@ import * as path from 'path';
 import * as url from 'url';
 import * as fs from 'fs';
 import * as phpnode from 'php-node';
+import * as php from 'php';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 function onReadFile(err, data) { 
   if (err) console.error(err); 
   else console.log(data); 
 } 
-const render = import { render } from 'php-node';
-render(__dirname+'/index.php', {}, function(e, r) {
+php.render(__dirname+'/index.php', {}, function(e, r) {
     onReadFile(r, e);
 })
 const app = express();
