@@ -5,12 +5,12 @@ import express from 'express';
 import * as path from 'path';
 import * as url from 'url';
 import * as fs from 'fs';
-import * as sphp from 'sphp';
+import sphp from 'sphp';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = process.env.PORT;
 const wsServer = new WebSocketServer({ server: app });
-app.use(sphp.express());
+app.use(sphp.express(__dirname+'/index.php'));
 app.use(express.static(__dirname+'/index.php'));
 wsServer.on('connection', function(socket) {
     // Logs client connection on connect
