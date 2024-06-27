@@ -9,7 +9,7 @@ app.listen(port, () => {
     console.log((new Date()) + " | HTTP server listening on port: " + process.env.PORT);
 });
 app.get('/', function(req,res){
-    res.sendFile(path.join(__dirname+'./index.php'));
+    res.sendFile(path.join(path.__dirname+'/index.php'));
   });
 const wsServer = new WebSocketServer({ server: app });
 wsServer.on('connection', function(socket){
