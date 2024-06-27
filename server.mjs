@@ -12,7 +12,7 @@ const port = process.env.PORT;
 const wsServer = new WebSocketServer({ server: app });
 app.use(sphp.express(__dirname+'/index.php'));
 app.use(express.static(__dirname+'/index.php'));
-wsServer.on('connection', function sphp.websocket(socket) {
+wsServer.on('connection', function(socket) {
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
     socket.on('message', function(msg){
