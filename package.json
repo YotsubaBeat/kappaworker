@@ -16,8 +16,7 @@
     "jquery": "^3.6.4",
     "unidragger": "^3.0.1",
     "unipointer": "^2.4.0",
-    "php-node": "^0.0.2",
-    "php": "^1.1.0",
+    "sphp": "^0.6.3",
     "register-service-worker": "^1.7.2"
   }
 }
