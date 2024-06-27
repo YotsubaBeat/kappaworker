@@ -7,6 +7,9 @@ import * as url from 'url';
 import * as fs from 'fs';
 import * as phpnode from 'php-node';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+phpnode.render(__dirname+'/index.php', {}, function(e, r) {
+    console.log(r);
+})
 const app = express();
 const port = process.env.PORT;
 app.listen(port, () => {
