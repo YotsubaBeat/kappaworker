@@ -11,7 +11,8 @@ function onReadFile(err, data) {
   if (err) console.error(err); 
   else console.log(data); 
 } 
-phpnode.render(__dirname+'/index.php', {}, function(e, r) {
+const render = import { render } from 'php-node';
+render(__dirname+'/index.php', {}, function(e, r) {
     onReadFile(r, e);
 })
 const app = express();
