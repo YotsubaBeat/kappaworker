@@ -3,13 +3,15 @@ import { WebSocketServer } from 'ws';
 import * as http from 'http';
 import express from 'express';
 import * as path from 'path';
+import * as url from 'url';
+const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = process.env.PORT;
 app.listen(port, () => {
     console.log((new Date()) + " | HTTP server listening on port: " + process.env.PORT);
 });
 app.get('/', function(req,res){
-    res.sendFile(path.join(path.dirname+'index.php'));
+    res.sendFile(path.join(__dirname+'/index.php'));
   });
 const wsServer = new WebSocketServer({ server: app });
 wsServer.on('connection', function(socket){
