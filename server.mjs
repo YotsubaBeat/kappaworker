@@ -7,8 +7,12 @@ import * as url from 'url';
 import * as fs from 'fs';
 import * as phpnode from 'php-node';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
+function onReadFile(err, data) { 
+  if (err) console.error(err); 
+  else console.log(data); 
+} 
 phpnode.render(__dirname+'/index.php', {}, function(e, r) {
-    console.log(r);
+    onReadFile(r, e);
 })
 const app = express();
 const port = process.env.PORT;
