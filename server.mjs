@@ -29,9 +29,10 @@ wsServer.on('connection', function sphp.websocket(socket) {
           if (/^http(s?):\/\//.test(val) || val.includes('.')) 
             return true || false;
         };
-        // Responds to websocket with a encoded URL of input
+        // Exports the encoded websocket into a module
         data["request"] = encodedWebSocket;
         module.exports = data;
+        // Sends the final product back to the client once it has finished
         socket.send(encodeURL.response);
     })
 });
