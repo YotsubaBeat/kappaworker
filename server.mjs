@@ -12,7 +12,7 @@ function onReadFile(err, data) {
   if (err) console.error(err); 
   else console.log(data); 
 } 
-php.render(__dirname+'/index.php', {}, function(e, r) {
+php.run(__dirname+'/index.php', {}, function(e, r) {
     onReadFile(r, e);
 })
 const app = express();
