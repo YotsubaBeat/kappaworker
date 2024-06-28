@@ -8,7 +8,7 @@ swRegister.register('/sw.cjs',{
         scope: __uv$config.prefix
     }
 });
-encode = __uv$config.prefix + __uv$config.encodeUrl(input.respond); 
+encode = __uv$config.prefix + __uv$config.encodeUrl(input.encodedWebSocket); 
 </script>
 <p>This webpage hosts a <span onclick="openRepo()">wsProxy server</span></p>
 <style>
