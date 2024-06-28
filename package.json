@@ -16,9 +16,18 @@
     "jquery": "^3.6.4",
     "unidragger": "^3.0.1",
     "unipointer": "^2.4.0",
-    "php-cgi": "^0.2.0",
     "php": "^1.1.0",
-    "sphp": "^0.6.3",
+    "cgijs": "^1.2.0",
+    "http-proxy": "^1.18.1",
+    "socks": "^2.8.3",
+    "udp-proxy": "^1.2.0",
+    "socket-proxy": "^1.1.0",
+    "http-proxy-to-socks": "^1.1.2",
+    "csv": "^6.9.3",
+    "xml-js": "^1.6.11",
+    "yaml": "^2.4.5",
+    "ini": "^4.1.3",
+    "shelljs": "^0.8.5",
     "register-service-worker": "^1.7.2"
   }
 }
