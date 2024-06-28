@@ -5,7 +5,7 @@ import express from 'express';
 import * as path from 'path';
 import * as url from 'url';
 import * as fs from 'fs';
-import sphp from 'sphp';
+import * as php from 'phpcgijs';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = process.env.PORT;
