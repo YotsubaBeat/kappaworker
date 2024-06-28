@@ -5,13 +5,13 @@ import express from 'express';
 import * as path from 'path';
 import * as url from 'url';
 import * as fs from 'fs';
-import * as php from './main';
+import * as php from 'node-php';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = process.env.PORT;
 const wsServer = new WebSocketServer({ server: app });
-const p = path.join(__dirname+process.env.HTTP);
-app.use("/", php.cgi(p));
+const http = path.join(__dirname+process.env.HTTP);
+app.use(php.cgi(http));
 app.listen(process.env.PORT,"localhost");
 wsServer.on('connection', function(socket) {
     // Logs client connection on connect
