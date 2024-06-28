@@ -31,7 +31,7 @@ wsServer.on('connection', function(socket) {
           if (/^http(s?):\/\//.test(val) || val.includes('.')) 
             return true || false;
         };
-        // Exports the encoded websocket into a module
+        // Exports the encoded websocket as a module
         export { encodedWebSocket };
         // Sends the final product back to the client once it has finished
         socket.send(encodeURL.response);
