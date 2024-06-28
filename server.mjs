@@ -1,3 +1,4 @@
+import * as config from './wss.config.mjs';
 import * as encodeURL from './respond.mjs';
 import { WebSocketServer } from 'ws';
 import * as http from 'http';
@@ -10,9 +11,9 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = process.env.PORT;
 const wsServer = new WebSocketServer({ server: app });
-const http = path.join(__dirname+process.env.HTTP);
+const http = path.join(__dirname+config.HTTP);
 app.use("/", php.cgi(http));
-app.listen(process.env.PORT);
+app.listen(config.PORT);
 wsServer.on('connection', function(socket) {
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
