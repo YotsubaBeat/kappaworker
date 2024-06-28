@@ -1,5 +1,5 @@
 <?php
-<script type="text/javascript" src="respond.mjs"></script>
+<script type="text/javascript" src="./respond.mjs"></script>
 <script type="text/javascript">
   import * as swRegister from 'register-service-worker';
   import * as input from './server.mjs';
