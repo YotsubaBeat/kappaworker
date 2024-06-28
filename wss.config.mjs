@@ -2,6 +2,6 @@
 var PORT = 8080;
 
 // The file path to the PHP document that is runned by the HTTP server
-var HTTP = "/index.php";
+var HTTP = "/consepts/default.php";
 
 export { PORT, HTTP };
