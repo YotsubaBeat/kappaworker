@@ -14,6 +14,6 @@ The `consepts/` folder provides alternative PHP documents which can be runned by
 ## Configuration
 Navigate to `uv.config.cjs` for configuration of the bare server and service prefix.
 
-For configuration of the websocket and HTTP server port, please define `PORT=<YOUR_PREFERED_PORT>` in the environment variables (`.env`).
+For configuration of the websocket and HTTP server port, please declare `PORT=<YOUR_PREFERED_PORT>` in the environment variables (`.env`).
 
-For configuration of the file location of the PHP document runned by the HTTP server, please define `HTTP='<FILE_PATH>'` in the environment variables (`.env`).
+For configuration of the file location of the PHP document runned by the HTTP server, please declare `HTTP='<FILE_PATH>'` in the environment variables (`.env`).
