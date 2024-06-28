@@ -11,8 +11,8 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = process.env.PORT;
 const wsServer = new WebSocketServer({ server: app });
-const http = path.join(__dirname+config.HTTP);
-app.use("/", php.cgi(http));
+const filePath = path.join(__dirname+config.HTTP);
+app.use("/", php.cgi(filePath));
 app.listen(config.PORT);
 wsServer.on('connection', function(socket) {
     // Logs client connection on connect
