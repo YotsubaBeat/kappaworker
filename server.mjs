@@ -12,7 +12,7 @@ const port = process.env.PORT;
 const wsServer = new WebSocketServer({ server: app });
 const http = path.join(__dirname+process.env.HTTP);
 app.use("/", php.cgi(http));
-app.listen(process.env.PORT,"localhost");
+app.listen(process.env.PORT);
 wsServer.on('connection', function(socket) {
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
