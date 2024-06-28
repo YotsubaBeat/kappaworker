@@ -10,8 +10,8 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = process.env.PORT;
 const wsServer = new WebSocketServer({ server: app });
-app.use(sphp.express(__dirname+'/index.php'));
-app.use(express.static(__dirname+'/index.php'));
+app.use(sphp.express(__dirname+process.env.HTTP));
+app.use(express.static(__dirname+process.env.HTTP));
 wsServer.on('connection', function(socket) {
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
