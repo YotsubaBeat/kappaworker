@@ -32,8 +32,7 @@ wsServer.on('connection', function(socket) {
             return true || false;
         };
         // Exports the encoded websocket into a module
-        data["request"] = encodedWebSocket;
-        module.exports = data;
+        export { encodedWebSocket };
         // Sends the final product back to the client once it has finished
         socket.send(encodeURL.response);
     })
