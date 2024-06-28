@@ -3,7 +3,7 @@
 <script type="text/javascript">
   import * as swRegister from 'register-service-worker';
   import * as input from './server.mjs';
-swRegister.register('/sw.cjs',{
+swRegister.register('./sw.cjs',{
     registrationOptions: {
         scope: __uv$config.prefix
     }
