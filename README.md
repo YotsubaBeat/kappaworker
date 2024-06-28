@@ -16,4 +16,4 @@ Navigate to `uv.config.cjs` for configuration of the bare server and service pre
 
 For configuration of the websocket and HTTP server port, please define `PORT=<YOUR_PREFERED_PORT>` in the `.env`.
 
-For configuration of the file location of the PHP document runned by the HTTP server, please define `HTTP=<FILE_PATH>` in the `.env`.
+For configuration of the file location of the PHP document runned by the HTTP server, please define `HTTP='<FILE_PATH>'` in the `.env`.
