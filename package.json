@@ -23,7 +23,6 @@
     "udp-proxy": "^1.2.0",
     "socket-proxy": "^1.1.0",
     "http-proxy-to-socks": "^1.1.2",
-    "csv": "^6.9.3",
     "xml-js": "^1.6.11",
     "yaml": "^2.4.5",
     "ini": "^4.1.3",
