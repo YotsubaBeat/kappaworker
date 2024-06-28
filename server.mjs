@@ -5,12 +5,13 @@ import express from 'express';
 import * as path from 'path';
 import * as url from 'url';
 import * as fs from 'fs';
-import { cgi } from 'phpcgijs';
+import * as php from './main';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = process.env.PORT;
 const wsServer = new WebSocketServer({ server: app });
-app.use("/phpdynamic", cgi(__dirname+process.env.HTTP));
+const p = path.join(__dirname+process.env.HTTP);
+app.use("/", php.cgi(p));
 app.listen(process.env.PORT,"localhost");
 wsServer.on('connection', function(socket) {
     // Logs client connection on connect
