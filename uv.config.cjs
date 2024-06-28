@@ -1,5 +1,7 @@
 self.__uv$config = {
+    // The service prefix of the encoded webpages
     prefix: '/service/',
+    // The full URL of the bare server
     bare: 'https://aluu.xyz/bare/',
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
