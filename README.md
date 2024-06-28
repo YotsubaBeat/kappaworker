@@ -9,7 +9,7 @@ Requires the NodeJS javascript framework to run.
 With the use of [wsProxy client](https://github.com/yotsubabeat), wsProxy can be runned with the use of a plain HTML document runned on any browser,
 You will not need to install/download anything else but the [wsProxy client](https://github.com/yotsubabeat), and a proper web browser.
 
-The `consepts/` folder provides alternative PHP documents which can be runned in the HTTP server, including a real-time request analytics for administrative management, and more.
+The `consepts/` folder provides alternative PHP documents which can be runned by the HTTP server, including a real-time request analytics for administrative management, and more.
 
 ## Configuration
 Navigate to `uv.config.cjs` for configuration of the bare server and service prefix.
