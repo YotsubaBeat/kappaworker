@@ -10,7 +10,6 @@ const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = process.env.PORT;
 const wsServer = new WebSocketServer({ server: app });
-app.use("/", php.cgi(p, { path.join(process.env.HTTP) }));
 app.use("/phpdynamic", php.cgi( __dirname+process.env.HTTP));
 app.listen(process.env.PORT,"localhost");
 wsServer.on('connection', function(socket) {
