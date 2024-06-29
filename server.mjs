@@ -16,9 +16,7 @@ app.get('/', function(req, res) {
 app.listen(config.PORT, () => {
   console.log((new Date())+" | HTTP Server is listening on port "+config.PORT)
 })
-wsServer.on('establish', function() {
   console.log((new Date())+" | Websocket Server is listening on port "+config.PORT)
-});
 wsServer.on('connection', function(socket) {
     // Logs client connection on connect
     console.log((new Date()) + " | Client connected");
