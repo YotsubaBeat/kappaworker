@@ -1,4 +1,4 @@
-import * as config from './wss.config.mjs';
+import { HTTP, PORT } from './wss.config.mjs';
 import * as encodeURL from './respond.mjs';
 import { WebSocketServer } from 'ws';
 import * as http from 'http';
