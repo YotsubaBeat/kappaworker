@@ -4,7 +4,7 @@ Works similar to [the wisp protocol](https://wisp.mercurywork.shop), but made mo
 Requires the NodeJS javascript framework to run.
 
 ## Benefits
-With the use of [wssProtocol client](https://github.com/yotsubabeat), wsProxy can be runned with the use of a plain HTML document runned on any browser,
+With the use of [wssProtocol client](https://github.com/yotsubabeat), the protocol can be runned with the use of a plain HTML document runned on any browser,
 You will not need to install/download anything else but the [wssProtocol client](https://github.com/yotsubabeat), and a proper web browser.
 
 The `consepts/` folder provides alternative PHP documents which can be runned by the HTTP server, including a real-time request analytics for administrative management, and more.
