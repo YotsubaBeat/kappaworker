@@ -1,6 +1,6 @@
 <p align="center"><img src="https://i.ibb.co/XVWwd0T/wss-Protocol.png" height="200"></p>
 <h1 align="center">wssProtocol</h1>
-Works similar to [the wisp protocol](https://wisp.mercurywork.shop), but made more to work for production, mass-deployment, customizability, simplicity and handling websocket connections established by the [wssProtocol client](https://github.com/yotsubabeat), aswell as a proof-of-concept(s).
+<h3 align="center">Works similar to <a href="https://wisp.mercurywork.shop">the wisp protocol</a>, but made more to work for production, mass-deployment, customizability, simplicity and handling websocket connections established by the [wssProtocol client](https://github.com/yotsubabeat), aswell as a proof-of-concept(s).
 
 <h1 align="center">Dependencies</h1>
 Requires the NodeJS javascript framework to run.
