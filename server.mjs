@@ -13,8 +13,8 @@ const filePath = path.join(__dirname+config.HTTP);
 app.get('/', function(req, res) {
   res.sendFile(filePath);
 });
-app.listen(8080, () => {
-  console.log((new Date())+" | HTTP Server is listening on port "+config.port)
+app.listen(config.PORT, () => {
+  console.log((new Date())+" | HTTP Server is listening on port "+config.PORT)
 })
 wsServer.on('connection', function(socket) {
     // Logs client connection on connect
