@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.ibb.co/SP3gjkb/Logooo.jpg" height="200"></p>
+<p align="center"><img src="https://i.ibb.co/XVWwd0T/wss-Protocol.png" height="200"></p>
 <h1 align="center">wssProtocol</h1>
 Works similar to [the wisp protocol](https://wisp.mercurywork.shop), but made more to work for production, mass-deployment, customizability, simplicity and handling websocket connections established by the [wssProtocol client](https://github.com/yotsubabeat), aswell as a proof-of-concept(s).
 ## Dependencies
