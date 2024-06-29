@@ -13,5 +13,5 @@ You will not need to install/download anything else but the <a href="https://git
 
 <h1 align="center">Configuration</h1>
 <h3 align="center">Navigate to <code>uv.config.cjs</code> for configuration of the bare server and service prefix.<br><br>
-For configuration of the websocket and HTTP server port, please declare <code>PORT=<YOUR_PREFERED_PORT></code> in <code>wss.config.mjs</code>.<br><br>
-For configuration of the file location of the HTML document runned by the HTTP server, please declare <code>HTTP='<FILE_PATH>'</code> in <code>wss.config.cjs</code>.</h3>
+For configuration of the websocket and HTTP server port, please declare <code>PORT=(YOUR_PREFERED_PORT)</code> in <code>wss.config.mjs</code>.<br><br>
+For configuration of the file location of the HTML document runned by the HTTP server, please declare <code>HTTP='(FILE_PATH)'</code> in <code>wss.config.cjs</code>.</h3>
