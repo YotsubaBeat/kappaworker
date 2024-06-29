@@ -4,13 +4,13 @@ Works similar to [the wisp protocol](https://wisp.mercurywork.shop), but made mo
 ## Dependencies
 Requires the NodeJS javascript framework to run.
 
-## Benefits
+<h1 align="center">Benefits</h1>
 With the use of [wssProtocol client](https://github.com/yotsubabeat), the protocol can be runned with the use of a plain HTML document runned on any browser,
 You will not need to install/download anything else but the [wssProtocol client](https://github.com/yotsubabeat), and a proper web browser.
 
 The `consepts/` folder provides alternative PHP documents which can be runned by the HTTP server, including a real-time request analytics for administrative management, and more.
 
-## Configuration
+<h1 align="center">Configuration</h1>
 Navigate to `uv.config.cjs` for configuration of the bare server and service prefix.
 
 For configuration of the websocket and HTTP server port, please declare `PORT=<YOUR_PREFERED_PORT>` in the environment variables (`.env`).
