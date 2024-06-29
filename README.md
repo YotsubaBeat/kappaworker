@@ -1,5 +1,5 @@
 ## wssProtocol
-Works similar to [the wisp protocol](https://wisp.mercurywork.shop), but made more to work for production, mass-deployment, customizability, simplicity and handling websocket connections established by the [wsProtocol client](https://github.com/yotsubabeat), aswell as a proof-of-concept(s).
+Works similar to [the wisp protocol](https://wisp.mercurywork.shop), but made more to work for production, mass-deployment, customizability, simplicity and handling websocket connections established by the [wssProtocol client](https://github.com/yotsubabeat), aswell as a proof-of-concept(s).
 ## Dependencies
 Requires the NodeJS javascript framework to run.
 
