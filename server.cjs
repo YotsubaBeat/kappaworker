@@ -1,7 +1,3 @@
-import('./wss.config.mjs').then(({ HTTP, PORT }) => {
-  const port = PORT;
-  const fileloc = HTTP;
-});
 const encodeURL = import('./respond.mjs');
 const http = require('http');
 const express = require('express');
@@ -11,12 +7,17 @@ const fs = require('fs');
 const ws = require('ws');
 const app = express();
 const expressWs = require('express-ws')(app);
-const filePath = path.join(__dirname+fileloc);
-app.use('/', function(req, res) {
-  res.sendFile(filePath);
-});
-app.get('/', function(req, res) {
-  res.sendFile(filePath);
+import('./wss.config.mjs').then(({ HTTP, PORT }) => {
+  let filePath = path.join(__dirname+HTTP);
+  app.listen(PORT, () => {
+    console.log((new Date())+" | Server is listening on port "+PORT)
+  });
+  app.use('/', function(req, res) {
+    res.sendFile(filePath);
+  });
+  app.get('/', function(req, res) {
+    res.sendFile(filePath);
+  });
 });
 app.ws('/', function(ws, req) {
     ws.on('message', function(msg){
@@ -36,7 +37,4 @@ app.ws('/', function(ws, req) {
         // Sends the final product back to the client once it has finished
         ws.send(encodedWebSocket);
     });
-});
-app.listen(port, () => {
-  console.log((new Date())+" | Server is listening on port "+port)
 });
