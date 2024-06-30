@@ -6,7 +6,6 @@ const path = require('path');
 const url = require('url');
 const fs = require('fs');
 const ws = require('ws');
-const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = config.PORT;
 const wss = new ws.WebSocketServer({ server: app });
