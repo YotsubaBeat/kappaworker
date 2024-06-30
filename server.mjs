@@ -5,18 +5,19 @@ import express from 'express';
 import * as path from 'path';
 import * as url from 'url';
 import * as fs from 'fs';
-import * as app from 'express-ws';
+import * as ws from 'ws';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-const exp = express();
+const app = express();
+const wss = new ws.WebSocketServer({ server: app });
 const filePath = path.join(__dirname+config.HTTP);
-exp.get('/', function(req, res) {
+app.get('/', function(req, res) {
   res.sendFile(filePath);
 });
-exp.listen(config.PORT, () => {
+app.listen(config.PORT, () => {
   console.log((new Date())+" | Server is listening on port "+config.PORT)
 });
-app.ws('/', function(ws, req) {
-    ws.on('message', function(msg){
+wss.on('connection', function(socket) {
+    socket.on('message', function(msg){
         // Logs input received from client
         console.log((new Date())+" | Received input from client: ["+msg+"]");
         // Converts input to a working URL
