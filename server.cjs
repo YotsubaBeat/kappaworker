@@ -10,6 +10,9 @@ const app = express();
 const port = config.PORT;
 const expressWs = require('express-ws')(app);
 const filePath = path.join(__dirname+config.HTTP);
+app.use('/', function(req, res) {
+  res.sendFile(filePath);
+});
 app.get('/', function(req, res) {
   res.sendFile(filePath);
 });
