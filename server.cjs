@@ -1,4 +1,4 @@
-const config = import('./wss.config.mjs';
+const config = import('./wss.config.mjs');
 const encodeURL = import('./respond.mjs');
 const http = require('http');
 const express = require('express');
