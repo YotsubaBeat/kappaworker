@@ -24,19 +24,17 @@ wsServer.on('connection', function(socket) {
         // Logs input received from client
         console.log((new Date()) + " | Received input from client: " + "[" + msg + "]");
         // Converts input to a working URL
-        const encodedWebSocket = 0;
         if (!isUrl(msg)) {
-          encodedWebSocket = 'https://www.google.com/search?q=' + msg;
+          let encodedWebSocket = 'https://www.google.com/search?q=' + msg;
         } else if (isUrl(msg)) { 
-          encodedWebSocket = 'https://' + msg;
+          let encodedWebSocket = 'https://' + msg;
         }
         function isUrl(val = val.trim()) {
           if (/^http(s?):\/\//.test(val) || val.includes('.')) 
             return true || false;
         };
         // Exports the encoded websocket as a module
-        module.exports = encodedWebSocket;
         // Sends the final product back to the client once it has finished
-        socket.send(encodeURL.response);
+        socket.send(encodedWebSocket);
     })
 });
