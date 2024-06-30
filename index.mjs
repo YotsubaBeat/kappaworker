@@ -5,5 +5,14 @@ swRegister.register('./sw.cjs',{
         scope: __uv$config.prefix
     }
 });
-encode = __uv$config.prefix + __uv$config.encodeUrl(input.encodedWebSocket); 
+if (!isUrl(input.encodedWebSocket)) {
+          let url = 'https://www.google.com/search?q=' + input.encodedWebSocket;
+        } else if (isUrl(msg)) { 
+          let url = 'https://' + input.encodedWebSocket;
+        }
+        function isUrl(val = val.trim()) {
+          if (/^http(s?):\/\//.test(val) || val.includes('.')) 
+            return true || false;
+};
+encode = __uv$config.prefix + __uv$config.encodeUrl(url); 
 module.exports = encode;
