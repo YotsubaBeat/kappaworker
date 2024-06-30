@@ -13,9 +13,6 @@ const filePath = path.join(__dirname+config.HTTP);
 app.get('/', function(req, res) {
   res.sendFile(filePath);
 });
-app.listen(port, () => {
-  console.log((new Date())+" | Server is listening on port "+config.PORT)
-});
 app.ws('/', function(ws, req) {
     ws.on('message', function(msg){
         // Logs input received from client
@@ -34,4 +31,7 @@ app.ws('/', function(ws, req) {
         // Sends the final product back to the client once it has finished
         ws.send(encodedWebSocket);
     });
+});
+app.listen(port, () => {
+  console.log((new Date())+" | Server is listening on port "+port)
 });
