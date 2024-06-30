@@ -1,11 +1,11 @@
 import * as config from './wss.config.mjs';
 import * as encodeURL from './respond.mjs';
-import { WebSocketServer } from 'ws';
 import * as http from 'http';
 import express from 'express';
 import * as path from 'path';
 import * as url from 'url';
 import * as fs from 'fs';
+import * as expressWS from 'express-ws';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const wsServer = new WebSocketServer({ server: app });
@@ -17,10 +17,8 @@ app.listen(config.PORT, () => {
   console.log((new Date())+" | HTTP Server is listening on port "+config.PORT)
 })
 console.log((new Date())+" | Websocket Server is listening on port "+config.PORT)
-wsServer.on('connection', function(socket) {
-    // Logs client connection on connect
-    console.log((new Date())+" | Client connected");
-    socket.on('message', function(msg){
+expressWS.ws('/', function(ws, req) {
+    ws.on('message', function(msg){
         // Logs input received from client
         console.log((new Date())+" | Received input from client: ["+msg+"]");
         // Converts input to a working URL
