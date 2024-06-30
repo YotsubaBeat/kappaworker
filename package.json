@@ -1,9 +1,9 @@
 {
   "name" : "work-server",
   "version" : "0.1.0",
-  "main" : "server.js",
+  "main" : "server.cjs",
   "scripts" : {
-    "start": "node server.mjs"
+    "start": "node server.cjs"
   },
   "engines" : {
     "node" : "^20"
