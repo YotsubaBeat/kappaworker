@@ -8,12 +8,13 @@ import * as fs from 'fs';
 import * as ws from 'ws';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
-const wss = new ws.WebSocketServer({ port: config.PORT });
+const port = config.PORT;
+const wss = new ws.WebSocketServer({ port: port });
 const filePath = path.join(__dirname+config.HTTP);
 app.get('/', function(req, res) {
   res.sendFile(filePath);
 });
-app.listen(config.PORT, () => {
+app.listen(port, () => {
   console.log((new Date())+" | Server is listening on port "+config.PORT)
 });
 wss.on('connection', function(socket) {
