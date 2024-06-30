@@ -15,7 +15,7 @@ app.get('/', function(req, res) {
 app.listen(config.PORT, () => {
   console.log((new Date())+" | Server is listening on port "+config.PORT)
 })
-expressWS.ws('/', function(ws, req) {
+app.ws('/', function(ws, req) {
     ws.on('message', function(msg){
         // Logs input received from client
         console.log((new Date())+" | Received input from client: ["+msg+"]");
