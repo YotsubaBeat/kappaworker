@@ -14,7 +14,7 @@ exp.get('/', function(req, res) {
 });
 exp.listen(config.PORT, () => {
   console.log((new Date())+" | Server is listening on port "+config.PORT)
-})
+});
 app.ws('/', function(ws, req) {
     ws.on('message', function(msg){
         // Logs input received from client
