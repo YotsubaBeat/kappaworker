@@ -36,5 +36,5 @@ wsServer.on('connection', function(socket) {
         // Exports the encoded websocket as a module
         // Sends the final product back to the client once it has finished
         socket.send(encodedWebSocket);
-    })
+    });
 });
