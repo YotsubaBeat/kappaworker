@@ -13,9 +13,8 @@ app.get('/', function(req, res) {
   res.sendFile(filePath);
 });
 app.listen(config.PORT, () => {
-  console.log((new Date())+" | HTTP Server is listening on port "+config.PORT)
+  console.log((new Date())+" | Server is listening on port "+config.PORT)
 })
-console.log((new Date())+" | Websocket Server is listening on port "+config.PORT)
 expressWS.ws('/', function(ws, req) {
     ws.on('message', function(msg){
         // Logs input received from client
