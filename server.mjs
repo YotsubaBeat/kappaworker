@@ -1,15 +1,15 @@
-import * as config from './wss.config.mjs';
-import * as encodeURL from './respond.mjs';
-import * as http from 'http';
-import express from 'express';
-import * as path from 'path';
-import * as url from 'url';
-import * as fs from 'fs';
-import * as ws from 'ws';
+const config = require('./wss.config.mjs');
+const encodeURL = require('./respond.mjs');
+const http = require('http');
+const express = require('express');
+const path = require('path');
+const url = require('url');
+const fs = require('fs');
+const ws = require('ws');
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
 const port = config.PORT;
-const wss = new ws.WebSocketServer({ port: port });
+const wss = new ws.WebSocketServer({ server: app });
 const filePath = path.join(__dirname+config.HTTP);
 app.get('/', function(req, res) {
   res.sendFile(filePath);
