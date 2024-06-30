@@ -24,17 +24,8 @@ app.ws('/', function(ws, req) {
         // Logs input received from client
         console.log((new Date())+" | Received input from client: ["+msg+"]");
         // Converts input to a working URL
-        if (!isUrl(msg)) {
-          let encodedWebSocket = 'https://www.google.com/search?q=' + msg;
-        } else if (isUrl(msg)) { 
-          let encodedWebSocket = 'https://' + msg;
-        }
-        function isUrl(val = val.trim()) {
-          if (/^http(s?):\/\//.test(val) || val.includes('.')) 
-            return true || false;
-        };
         // Exports the encoded websocket as a module
         // Sends the final product back to the client once it has finished
-        ws.send(encodedWebSocket);
+        ws.send((new Date()));
     });
 });
