@@ -8,7 +8,7 @@ const fs = require('fs');
 const ws = require('ws');
 const app = express();
 const port = config.PORT;
-const wss = new ws.WebSocketServer({ server: app });
+const expressWs = require('express-ws')(app);
 const filePath = path.join(__dirname+config.HTTP);
 app.get('/', function(req, res) {
   res.sendFile(filePath);
@@ -16,8 +16,8 @@ app.get('/', function(req, res) {
 app.listen(port, () => {
   console.log((new Date())+" | Server is listening on port "+config.PORT)
 });
-wss.on('connection', function(socket) {
-    socket.on('message', function(msg){
+app.ws('/', function(ws, req) {
+    ws.on('message', function(msg){
         // Logs input received from client
         console.log((new Date())+" | Received input from client: ["+msg+"]");
         // Converts input to a working URL
@@ -32,6 +32,6 @@ wss.on('connection', function(socket) {
         };
         // Exports the encoded websocket as a module
         // Sends the final product back to the client once it has finished
-        socket.send(encodedWebSocket);
+        ws.send(encodedWebSocket);
     });
 });
