@@ -8,7 +8,6 @@ import * as fs from 'fs';
 import * as expressWS from 'express-ws';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const app = express();
-const wsServer = new WebSocketServer({ server: app });
 const filePath = path.join(__dirname+config.HTTP);
 app.get('/', function(req, res) {
   res.sendFile(filePath);
