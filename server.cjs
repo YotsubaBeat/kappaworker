@@ -1,4 +1,7 @@
-const config = import('./wss.config.mjs');
+import('./wss.config.mjs').then(({ HTTP, PORT }) => {
+  const port = PORT;
+  const fileloc = HTTP;
+});
 const encodeURL = import('./respond.mjs');
 const http = require('http');
 const express = require('express');
@@ -7,9 +10,8 @@ const url = require('url');
 const fs = require('fs');
 const ws = require('ws');
 const app = express();
-const port = config.PORT;
 const expressWs = require('express-ws')(app);
-const filePath = path.join(__dirname+config.HTTP);
+const filePath = path.join(__dirname+fileloc);
 app.use('/', function(req, res) {
   res.sendFile(filePath);
 });
