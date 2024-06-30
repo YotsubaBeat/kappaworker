@@ -5,7 +5,7 @@ import express from 'express';
 import * as path from 'path';
 import * as url from 'url';
 import * as fs from 'fs';
-import { app } from 'express-ws';
+import * as app from 'express-ws';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
 const exp = express();
 const filePath = path.join(__dirname+config.HTTP);
