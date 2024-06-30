@@ -7,14 +7,15 @@ import * as url from 'url';
 import * as fs from 'fs';
 import { app } from 'express-ws';
 const __dirname = url.fileURLToPath(new URL('.', import.meta.url));
-const app = express();
+const exp = express();
 const filePath = path.join(__dirname+config.HTTP);
-app.get('/', function(req, res) {
+exp.get('/', function(req, res) {
   res.sendFile(filePath);
 });
-app.listen(config.PORT, () => {
+exp.listen(config.PORT, () => {
   console.log((new Date())+" | Server is listening on port "+config.PORT)
 })
+app.listen(exp);
 app.ws('/', function(ws, req) {
     ws.on('message', function(msg){
         // Logs input received from client
