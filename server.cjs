@@ -1,5 +1,5 @@
-const config = require('./wss.config.mjs');
-const encodeURL = require('./respond.mjs');
+const config = import('./wss.config.mjs';
+const encodeURL = import('./respond.mjs');
 const http = require('http');
 const express = require('express');
 const path = require('path');
