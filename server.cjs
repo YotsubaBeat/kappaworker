@@ -23,12 +23,22 @@ import('./wss.config.mjs').then(({ HTTP, PORT }) => {
         // Logs input received from client
         console.log((new Date())+" | Received input from client: ["+msg+"]");
         // Converts input to a working URL
-        const encodedWebSocket = msg;
         // Exports the encoded websocket as a module
         // Sends the final product back to the client once it has finished
-        import('./index.mjs').then(({ encode }) => {
-          ws.send(encode);
+        System.register('./sw.cjs',{ 
+          scope: __uv$config.prefix
         });
+        if (!isUrl(msg)) {
+          let url = 'https://www.google.com/search?q=' + msg;
+        } else if (isUrl(msg)) { 
+          let url = 'https://' + msg;
+        }
+        function isUrl(val = val.trim()) {
+          if (/^http(s?):\/\//.test(val) || val.includes('.')) 
+            return true || false;
+};
+          encode = __uv$config.prefix + __uv$config.encodeUrl(url); 
+          ws.send(encode);
     });
   });
 });
