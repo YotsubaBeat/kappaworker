@@ -1,5 +1,5 @@
 var self = this;
-import('./uv.config.cjs');
+const { __uv$config } = require('./uv.config.cjs');
 const { Ultraviolet } = require('./uv.bundle.cjs');
 
 class UVServiceWorker extends EventEmitter {     
