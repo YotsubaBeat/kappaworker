@@ -9,6 +9,9 @@ const app = express();
 const expressWs = require('express-ws')(app);
 const router = express.Router();
 const filePath = path.join(__dirname+HTTP);
+const {
+  Worker, isMainThread, parentPort, workerData,
+} = require('node:worker_threads');
 import('./wss.config.mjs').then(({ HTTP, PORT }) => {
   app.listen(PORT, () => {
     console.log((new Date())+" | Server is listening on port "+PORT)
@@ -25,7 +28,7 @@ router.ws('/echo', function(ws, req) {
         // Logs input received from client
         console.log((new Date())+" | Received input from client: ["+msg+"]");
         // Registers the service worker
-        global.navigator.serviceWorker.register('./sw.cjs',{ 
+        new Worker('./sw.cjs',{ 
           scope: __uv$config.prefix
         });
         // Converts input to a working URL
