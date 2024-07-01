@@ -12,9 +12,7 @@ const {
   Worker, isMainThread, parentPort, workerData,
 } = require('node:worker_threads');
 // Registers the service worker
-new Worker('./sw.cjs',{ 
-  scope: __uv$config.prefix
-});
+new Worker('./sw.cjs',{ scope: __uv$config.prefix });
 import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS }) => {
   if(SESSION_LOG == "true") sessionStorage = new WebSocket(SESSION_WSS);
   let filePath = path.join(__dirname+HTTP);
