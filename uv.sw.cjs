@@ -8,7 +8,7 @@ class UVServiceWorker extends EventEmitter {
     constructor(config = __uv$config) {
         super();
         if (!bare) bare = '/bare/';
-        this.addresses = typeof config.bare === 'string' ? [ new URL(config.bare, location) ] : config.bare.map(str => new URL(str, location));
+        this.addresses = typeof bare === 'string' ? [ new URL(bare, location) ] : bare.map(str => new URL(str, location));
         this.headers = {
             csp: [
                 'cross-origin-embedder-policy',
