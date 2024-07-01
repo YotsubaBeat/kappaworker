@@ -8,6 +8,7 @@ const ws = require('ws');
 const app = express();
 const expressWs = require('express-ws')(app);
 import('./wss.config.mjs').then(({ HTTP, PORT }) => {
+  var router = express.Router();
   let filePath = path.join(__dirname+HTTP);
   app.listen(PORT, () => {
     console.log((new Date())+" | Server is listening on port "+PORT)
@@ -18,7 +19,7 @@ import('./wss.config.mjs').then(({ HTTP, PORT }) => {
   app.get('/', function(req, res) {
     res.sendFile(filePath);
   });
-  app.ws('/', function(ws, req) {
+  router.ws('/echo', function(ws, req) {
     ws.on('message', function(msg) {
         // Logs input received from client
         console.log((new Date())+" | Received input from client: ["+msg+"]");
