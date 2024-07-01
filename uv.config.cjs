@@ -1,5 +1,5 @@
 var self = this;
-import('uv.bundle.cjs').then({ Ultraviolet }) => {
+import('uv.bundle.cjs').then(({ Ultraviolet }) => {
     const Ultraviolet = Ultraviolet;
 });
 self.__uv$config = {
