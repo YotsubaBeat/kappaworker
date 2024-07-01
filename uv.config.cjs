@@ -13,4 +13,4 @@ self.__uv$config = {
     sw: 'uv.sw.cjs'
 };
 });
-module.exports.__uv$config = __uv$config;
+module.exports.__uv$config = self.__uv$config;
