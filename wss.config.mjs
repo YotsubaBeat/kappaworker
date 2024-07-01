@@ -10,4 +10,8 @@ const PORT = "8080";
 // The file path to the HTML document that is runned by the HTTP server
 const HTTP = "/consepts/default.html";
 
-export { HTTP, PORT, SESSION_LOG, STORAGE_WSS};
+const BARE = "https://aluu.xyz/bare/";
+
+const PREFIX = "/service/";
+
+export { HTTP, PORT, SESSION_LOG, STORAGE_WSS, BARE, PREFIX};
