@@ -12,7 +12,7 @@ const router = express.Router();
 const {
   Worker, isMainThread, parentPort, workerData,
 } = require('node:worker_threads');
-import('./wss.config.mjs').then(({ HTTP, PORT }) => {
+import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS }) => {
   let filePath = path.join(__dirname+HTTP);
   app.listen(PORT, () => {
     console.log((new Date())+" | Server is listening on port "+PORT)
