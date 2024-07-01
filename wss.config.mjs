@@ -1,3 +1,5 @@
+const DB = "false";
+
 // The port the server will listen on
 const PORT = "8080";
 
