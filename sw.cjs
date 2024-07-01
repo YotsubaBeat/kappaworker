@@ -1,9 +1,6 @@
-const {
-  Worker, isMainThread, parentPort, workerData,
-} = require('node:worker_threads');
-new Worker('./uv.sw.cjs');
-
-const sw = new UVServiceWorker();
+import('./uv.sw.cjs').then(({ UVServiceWorker }) => {
+    const sw = new UVServiceWorker();
+});
 
 self.addEventListener('fetch', event =>
     event.respondWith(
