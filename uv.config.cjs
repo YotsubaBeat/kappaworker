@@ -10,3 +10,4 @@ self.__uv$config = {
     config: 'uv.config.cjs',
     sw: 'uv.sw.cjs'
 };
+module.exports.__uv$config = __uv$config;
