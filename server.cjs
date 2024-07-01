@@ -12,12 +12,12 @@ const {
   Worker, isMainThread, parentPort, workerData,
 } = require('node:worker_threads');
 // Registers the service worker
-import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS, PREFIX }) => {
-  if(SESSION_LOG == "true") sessionStorage = new WebSocket(SESSION_WSS);
-  let filePath = path.join(__dirname+HTTP);
-  new Worker('./sw.cjs',{ WorkerGlobalScope: PREFIX });
+const config = import('./wss.config.mjs');
+  if(config.SESSION_LOG == "true") sessionStorage = new WebSocket(config.SESSION_WSS);
+  let filePath = path.join(__dirname+config.HTTP);
+  new Worker('./sw.cjs',{ WorkerGlobalScope: config.PREFIX });
   app.listen(PORT, () => {
-    console.log((new Date())+" | Server is listening on port "+PORT)
+    console.log((new Date())+" | Server is listening on port "+config.PORT)
   });
   app.use('/', function(req, res) {
     res.sendFile(filePath);
@@ -25,7 +25,6 @@ import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS, PREFIX 
   app.get('/', function(req, res) {
     res.sendFile(filePath);
   });
-});
 router.ws('/echo', function(ws, req) {
     ws.on('message', function(msg) {
         // Logs input received from client
@@ -41,7 +40,7 @@ router.ws('/echo', function(ws, req) {
             return true || false;
         };
         // Encodes the websocket
-        encode = PREFIX + __uv$config.encodeUrl(url); 
+        encode = config.PREFIX + __uv$config.encodeUrl(url); 
         // Sends the encoded websocket
         ws.send(encode);
     });
