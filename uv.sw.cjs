@@ -1,8 +1,5 @@
-const {
-  Worker, isMainThread, parentPort, workerData,
-} = require('node:worker_threads');
-new Worker('./uv.bundle.cjs');
-new Worker('./uv.config.cjs');
+importScripts('uv.bundle.cjs');
+importScripts('uv.config.cjs');
 
 class UVServiceWorker extends EventEmitter {     
     constructor(config = __uv$config) {
