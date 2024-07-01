@@ -6,7 +6,6 @@ const url = require('url');
 const fs = require('fs');
 const ws = require('ws');
 const app = express();
-const mysql = require('mysql');
 const expressWs = require('express-ws')(app);
 const router = express.Router();
 const {
