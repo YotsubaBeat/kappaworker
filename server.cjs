@@ -13,7 +13,6 @@ const {
 } = require('node:worker_threads');
 const { __uv$config } require('./uv.sw.cjs');
 // Registers the service worker
-const sw = new UVServiceWorker();
 new Worker('./sw.cjs',{ WorkerGlobalScope: __uv$config.prefix });
 import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS }) => {
   if(SESSION_LOG == "true") sessionStorage = new WebSocket(SESSION_WSS);
