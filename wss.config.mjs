@@ -1,19 +1,13 @@
-// To connect to a MySQL database leave this as "true"
-const DB = "false";
+// To log the session opened count to a specific server, leave this as "true"
+const SESSION_LOG = "false";
 
-// Hostname of the database
-const DB_HOST = "";
+// WSS address to the server the session opened count will be logged to
+const STORAGE_WSS = "wss://example.com/3000";
 
-// Your database username
-const DB_USER = "";
-
-// Database password
-const DB_PASSWORD = "";
-
-// The port the server will listen on
+// The port the server will be listening on
 const PORT = "8080";
 
 // The file path to the HTML document that is runned by the HTTP server
 const HTTP = "/consepts/default.html";
 
-export { HTTP, PORT, DB, DB_USER, DB_PASSWORD, DB_HOST };
+export { HTTP, PORT, SESSION_LOG, STORAGE_WSS};
