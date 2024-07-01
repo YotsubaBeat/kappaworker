@@ -6,13 +6,27 @@ const url = require('url');
 const fs = require('fs');
 const ws = require('ws');
 const app = express();
+const mysql = require('mysql');
 const expressWs = require('express-ws')(app);
 const router = express.Router();
 const {
   Worker, isMainThread, parentPort, workerData,
 } = require('node:worker_threads');
-import('./wss.config.mjs').then(({ HTTP, PORT }) => {
+import('./wss.config.mjs').then(({ HTTP, PORT, DB_HOST, DB_USER, DB_PASSWORD, DB }) => {
   let filePath = path.join(__dirname+HTTP);
+  if(DB == "true") {
+    let dbstream = mysql.createConnection({
+      host: "DB_HOST",
+      user: "DB_USER",
+      password: "DB_PASSWORD"
+    });
+    dbstream.connect(function(err) {
+      if (err) throw err;
+      console.log((new Date())+" | Connected to MySQL Database");
+    });
+  } else {
+    return
+  };
   app.listen(PORT, () => {
     console.log((new Date())+" | Server is listening on port "+PORT)
   });
