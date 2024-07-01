@@ -25,7 +25,7 @@ import('./wss.config.mjs').then(({ HTTP, PORT }) => {
         // Converts input to a working URL
         // Exports the encoded websocket as a module
         // Sends the final product back to the client once it has finished
-        System.register('./sw.cjs',{ 
+        global.navigator.serviceWorker.register('./sw.cjs',{ 
           scope: __uv$config.prefix
         });
         if (!isUrl(msg)) {
