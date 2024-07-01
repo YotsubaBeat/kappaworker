@@ -7,9 +7,9 @@ const fs = require('fs');
 const ws = require('ws');
 const app = express();
 const expressWs = require('express-ws')(app);
+const router = express.Router();
+const filePath = path.join(__dirname+HTTP);
 import('./wss.config.mjs').then(({ HTTP, PORT }) => {
-  var router = express.Router();
-  let filePath = path.join(__dirname+HTTP);
   app.listen(PORT, () => {
     console.log((new Date())+" | Server is listening on port "+PORT)
   });
