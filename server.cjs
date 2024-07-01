@@ -12,10 +12,10 @@ const {
   Worker, isMainThread, parentPort, workerData,
 } = require('node:worker_threads');
 // Registers the service worker
-new Worker('./sw.cjs',{ WorkerGlobalScope: '/service/' });
-import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS }) => {
+import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS, PREFIX }) => {
   if(SESSION_LOG == "true") sessionStorage = new WebSocket(SESSION_WSS);
   let filePath = path.join(__dirname+HTTP);
+  new Worker('./sw.cjs',{ WorkerGlobalScope: PREFIX });
   app.listen(PORT, () => {
     console.log((new Date())+" | Server is listening on port "+PORT)
   });
@@ -41,7 +41,7 @@ router.ws('/echo', function(ws, req) {
             return true || false;
         };
         // Encodes the websocket
-        encode = __uv$config.prefix + __uv$config.encodeUrl(url); 
+        encode = PREFIX + __uv$config.encodeUrl(url); 
         // Sends the encoded websocket
         ws.send(encode);
     });
