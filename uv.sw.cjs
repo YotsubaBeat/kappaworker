@@ -2,13 +2,11 @@ var self = this;
 const { __uv$config } = require('./uv.config.cjs');
 const { Ultraviolet } = require('./uv.bundle.cjs');
 import('./wss.config.mjs').then(({ BARE }) => {
-    var bare = BARE;
-});
 class UVServiceWorker extends EventEmitter {     
     constructor(config = __uv$config) {
         super();
-        if (!bare) bare = '/bare/';
-        this.addresses = typeof bare === 'string' ? [ new URL(bare, location) ] : bare.map(str => new URL(str, location));
+        if (!BARE) BARE = '/bare/';
+        this.addresses = typeof BARE === 'string' ? [ new URL(BARE, location) ] : BARE.map(str => new URL(str, location));
         this.headers = {
             csp: [
                 'cross-origin-embedder-policy',
@@ -790,3 +788,4 @@ function eventTargetAgnosticAddListener(emitter, name, listener, flags) {
     throw new TypeError('The "emitter" argument must be of type EventEmitter. Received type ' + typeof emitter);
   }
 }
+});
