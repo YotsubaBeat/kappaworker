@@ -1,4 +1,7 @@
 var self = this;
+import('uv.bundle.cjs').then({ Ultraviolet }) => {
+    const Ultraviolet = Ultraviolet;
+};
 self.__uv$config = {
     // The service prefix of the encoded webpages
     prefix: '/service/',
