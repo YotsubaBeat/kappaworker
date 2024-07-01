@@ -13,7 +13,7 @@ const {
   Worker, isMainThread, parentPort, workerData,
 } = require('node:worker_threads');
 import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS }) => {
-  if(SESSION_LOG == "true") let sessionStorage = new WebSocket(SESSION_WSS);
+  if(SESSION_LOG == "true") sessionStorage = new WebSocket(SESSION_WSS);
   let filePath = path.join(__dirname+HTTP);
   app.listen(PORT, () => {
     console.log((new Date())+" | Server is listening on port "+PORT)
