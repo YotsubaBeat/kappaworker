@@ -1,8 +1,7 @@
+import('wss.config.mjs').then(({ BARE, PREFIX }) => {
 self.__uv$config = {
-    // The service prefix of the encoded webpages
-    prefix: '/service/',
-    // The full URL of the bare server
-    bare: 'https://aluu.xyz/bare/',
+    prefix: PREFIX,
+    bare: BARE,
     encodeUrl: Ultraviolet.codec.xor.encode,
     decodeUrl: Ultraviolet.codec.xor.decode,
     handler: 'uv.handler.cjs',
@@ -10,3 +9,4 @@ self.__uv$config = {
     config: 'uv.config.cjs',
     sw: 'uv.sw.cjs'
 };
+});
