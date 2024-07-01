@@ -19,7 +19,8 @@ import('./wss.config.mjs').then(({ HTTP, PORT }) => {
   app.get('/', function(req, res) {
     res.sendFile(filePath);
   });
-  router.ws('/echo', function(ws, req) {
+});
+router.ws('/echo', function(ws, req) {
     ws.on('message', function(msg) {
         // Logs input received from client
         console.log((new Date())+" | Received input from client: ["+msg+"]");
@@ -42,5 +43,4 @@ import('./wss.config.mjs').then(({ HTTP, PORT }) => {
         // Sends the encoded websocket
         ws.send(encode);
     });
-  });
 });
