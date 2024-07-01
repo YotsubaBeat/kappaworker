@@ -11,6 +11,10 @@ const router = express.Router();
 const {
   Worker, isMainThread, parentPort, workerData,
 } = require('node:worker_threads');
+// Registers the service worker
+new Worker('./sw.cjs',{ 
+  scope: __uv$config.prefix
+});
 import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS }) => {
   if(SESSION_LOG == "true") sessionStorage = new WebSocket(SESSION_WSS);
   let filePath = path.join(__dirname+HTTP);
@@ -28,10 +32,6 @@ router.ws('/echo', function(ws, req) {
     ws.on('message', function(msg) {
         // Logs input received from client
         console.log((new Date())+" | Received input from client: ["+msg+"]");
-        // Registers the service worker
-        new Worker('./sw.cjs',{ 
-          scope: __uv$config.prefix
-        });
         // Converts input to a working URL
         if (!isUrl(msg)) {
           let url = 'https://www.google.com/search?q=' + msg;
