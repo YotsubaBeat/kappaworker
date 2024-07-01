@@ -12,7 +12,7 @@ const {
   Worker, isMainThread, parentPort, workerData,
 } = require('node:worker_threads');
 // Registers the service worker
-import('uv.sw.cjs').then(({ __uv$config } => {
+import('./uv.sw.cjs').then(({ __uv$config } => {
   new Worker('./sw.cjs',{ WorkerGlobalScope: __uv$config.prefix });
 });
 import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS }) => {
