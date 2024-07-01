@@ -16,7 +16,7 @@ const config = import('./wss.config.mjs');
   if(config.SESSION_LOG == "true") sessionStorage = new WebSocket(config.SESSION_WSS);
   let filePath = path.join(__dirname+config.HTTP);
   new Worker('./sw.cjs',{ WorkerGlobalScope: config.PREFIX });
-  app.listen(PORT, () => {
+  app.listen(config.PORT, () => {
     console.log((new Date())+" | Server is listening on port "+config.PORT)
   });
   app.use('/', function(req, res) {
