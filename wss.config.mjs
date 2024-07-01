@@ -16,4 +16,4 @@ const PORT = "8080";
 // The file path to the HTML document that is runned by the HTTP server
 const HTTP = "/consepts/default.html";
 
-export { HTTP, PORT };
+export { HTTP, PORT, DB, DB_USER, DB_PASSWORD, DB_HOST };
