@@ -1,5 +1,3 @@
-var self = this;
-import('uv.bundle.cjs').then(({ Ultraviolet }) => {
 self.__uv$config = {
     // The service prefix of the encoded webpages
     prefix: '/service/',
@@ -12,5 +10,3 @@ self.__uv$config = {
     config: 'uv.config.cjs',
     sw: 'uv.sw.cjs'
 };
-});
-module.exports.__uv$config = self.__uv$config;
