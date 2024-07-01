@@ -11,7 +11,7 @@ const router = express.Router();
 const {
   Worker, isMainThread, parentPort, workerData,
 } = require('node:worker_threads');
-const { __uv$config } require('./uv.sw.cjs');
+const { __uv$config } = require('./uv.sw.cjs');
 // Registers the service worker
 new Worker('./sw.cjs',{ WorkerGlobalScope: __uv$config.prefix });
 import('./wss.config.mjs').then(({ HTTP, PORT, SESSION_LOG, SESSION_WSS }) => {
