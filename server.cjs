@@ -8,11 +8,11 @@ const ws = require('ws');
 const app = express();
 const expressWs = require('express-ws')(app);
 const router = express.Router();
-const filePath = path.join(__dirname+HTTP);
 const {
   Worker, isMainThread, parentPort, workerData,
 } = require('node:worker_threads');
 import('./wss.config.mjs').then(({ HTTP, PORT }) => {
+  let filePath = path.join(__dirname+HTTP);
   app.listen(PORT, () => {
     console.log((new Date())+" | Server is listening on port "+PORT)
   });
