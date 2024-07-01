@@ -1,3 +1,4 @@
+var self = this;
 self.__uv$config = {
     // The service prefix of the encoded webpages
     prefix: '/service/',
