@@ -1,4 +1,14 @@
+// To connect to a MySQL database leave this as "true"
 const DB = "false";
+
+// Hostname of the database
+const DB_HOST = "";
+
+// Your database username
+const DB_USER = "";
+
+// Database password
+const DB_PASSWORD = "";
 
 // The port the server will listen on
 const PORT = "8080";
