@@ -1,3 +1,4 @@
+var self = this;
 import('./uv.config.cjs');
 const { Ultraviolet } = require('./uv.bundle.cjs');
 
